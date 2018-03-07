@@ -1,0 +1,49 @@
+// SCREEN SIZE
+// (mobile < 768px )
+$screen-sm: 768px; // Tablet Portrait >= 768px AND < 1024px
+$screen-md: 1024px; // Tablette Paysage >= 1024px AND < 1200px
+$screen-lg: 1200px; // Desktop > 1200px
+
+/* EXAMPLE USAGE:
+	 
+@include breakpoint(sm) {
+	property: value;
+}
+
+*/
+@mixin breakpoint($point) {
+	
+  	/* =======================
+			Upper
+	========================= */
+  	// from sm screen size and upper
+  	@if $point == sm {
+   		@media (min-width: $screen-sm){ @content; }
+  	}
+  	// from md screen size and upper
+  	@else if $point == md {
+   		@media (min-width: $screen-md){ @content; }
+  	}
+  
+  	
+  	/* =======================
+			Strict
+	========================= */
+	
+	@if $point == xs or xs-only{
+   		@media (max-width: $screen-sm - 1){ @content; }
+  	}
+  	@else if $point == sm-only {
+   		@media (min-width: $screen-sm) and (max-width: $screen-md - 1){ @content; }
+  	}
+  	@else if $point == md-only {
+   		@media (min-width: $screen-md) and (max-width: $screen-lg - 1){ @content; }
+  	}
+  	// from lg screen and upper (but nothing its upper than lg)
+  	@else if $point == lg or lg-only {
+   		@media (min-width: $screen-lg){ @content; }
+  	}
+
+}
+
+

@@ -1,0 +1,49 @@
+$gutter: 20px;
+
+@mixin cols($device: xs) {
+	.col-#{$device}-one{ flex-basis: 100% }
+	.col-#{$device}-two{ flex-basis: calc((100% / 2) - #{$gutter}  / 2) }
+	.col-#{$device}-three{ flex-basis: calc((100% / 3) - #{$gutter}  / 2) }
+	.col-#{$device}-four{ flex-basis: calc((100% / 4) - #{$gutter}  / 2) }
+	.col-#{$device}-five{ flex-basis: calc((100% / 5) - #{$gutter}  / 2) }
+	.col-#{$device}-six{ flex-basis: calc((100% / 6) - #{$gutter}  / 2) }
+	.col-#{$device}-seven{ flex-basis: calc((100% / 7) - #{$gutter}  / 2) }
+	.col-#{$device}-eight{ flex-basis: calc((100% / 8) - #{$gutter}  / 2) }
+	.col-#{$device}-nine{ flex-basis: calc((100% / 9) - #{$gutter}  / 2) }
+	.col-#{$device}-ten{ flex-basis: calc((100% / 10) - #{$gutter}  / 2) }
+	.col-#{$device}-eleven{ flex-basis: calc((100% / 11) - #{$gutter}  / 2) }
+	.col-#{$device}-twelve{ flex-basis: calc((100% / 12) - #{$gutter}  / 2) }
+}
+
+@mixin vertical_row($device: xs){
+	.#{$device}-vertical-row{
+		flex-direction: column;
+		height: 100%;
+		.col-md-two{
+			background-color: red;
+		}
+	}
+}
+
+
+*{
+  box-sizing: border-box;
+}
+body{
+  background: #333;
+}
+.row{
+	display: flex;
+	justify-content: space-between;
+}
+
+[class*="col-"]{
+  background: #fff;
+  background-clip: content-box;
+}
+
+.col-md-four{
+	background-color: #ccc;
+}
+@include cols(md);
+
