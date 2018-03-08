@@ -1,23 +1,33 @@
+// ==========================
+//	BREAKPOINT MOBILE FIRST
+// ==========================
+
 // SCREEN SIZE
 // (mobile < 768px )
 $screen-sm: 768px; // Tablet Portrait >= 768px AND < 1024px
 $screen-md: 1024px; // Tablette Paysage >= 1024px AND < 1200px
-$screen-lg: 1200px; // Desktop > 1200px
+$screen-lg: 1200px; // Desktop >= 1200px
 
-/* EXAMPLE USAGE:
+// EXAMPLE USAGE:
 	 
-@include breakpoint(sm) {
-	property: value;
-}
+// @include breakpoint(sm) {
+// 	property: value;
+// }
 
-*/
+
 @mixin breakpoint($point) {
 	
   	/* =======================
 			Upper
 	========================= */
+	
+	// mobile fist so XS is applied to all screen
+  	@if $point == xs{
+   		 @content
+  	}
+  	
   	// from sm screen size and upper
-  	@if $point == sm {
+  	@else if $point == sm {
    		@media (min-width: $screen-sm){ @content; }
   	}
   	// from md screen size and upper
@@ -30,7 +40,7 @@ $screen-lg: 1200px; // Desktop > 1200px
 			Strict
 	========================= */
 	
-	@if $point == xs or xs-only{
+	@else if $point == xs-only{
    		@media (max-width: $screen-sm - 1){ @content; }
   	}
   	@else if $point == sm-only {

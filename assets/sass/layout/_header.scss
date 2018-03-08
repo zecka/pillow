@@ -1,0 +1,41 @@
+/* =======================
+	      HEADER 
+   =======================	*/
+.logo{
+	display: block;
+	padding-left: 57px;
+	position: relative;
+	.logo-icon{
+		display: block;
+		position: absolute;
+		left: 0;
+		height: 47px;
+		width: 47px;
+		background-color: $dark-gray;
+		color: $white;
+		overflow: hidden;
+		span{
+			@include absCenter();
+			@include fontsize(40px);
+			text-transform: uppercase;
+		}
+		&::after{
+			content:"";
+			background-color: #ff4747;
+			@include absolute(unset, -5px, -5px, unset);
+			height: 10px;
+			width: 10px;
+			transform: rotate(45deg);
+			
+		}
+	}
+	h1{
+		margin: 0;
+	}
+	h2{
+		font-size: $font-base;
+		text-transform: none;
+		font-weight: normal;
+		margin: 0;
+	}
+}

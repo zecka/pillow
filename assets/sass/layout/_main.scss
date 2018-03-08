@@ -1,0 +1,161 @@
+
+/* =======================
+	      SLIDER 
+   =======================	*/
+
+#slider{
+	background-color: $light-gray;
+	background-image: url('../img/slider.png');
+	background-size: contain;
+	background-position: -80px bottom;
+	height: 250px;
+	margin: $gutter (-$gutter);
+	position: relative;
+	
+	@include breakpoint(sm-only){
+		background-position: left top;
+		background-size: 50%;
+	}
+	@include breakpoint(md){
+		height: 600px;
+		margin: 0;
+		background-position: contain bottom;
+	}
+	.slider-info{
+		left: 40%;
+		@include breakpoint(sm){
+			left: 50%;
+		}
+		padding-left: $gutter;
+		position: absolute;
+		bottom: 20%;
+		
+	}
+	h3{
+		@include fontsize(24px);
+		@include breakpoint(md){
+			@include fontsize(34px);
+		}
+		letter-spacing: 0;
+		margin-top: 0.2em;
+		margin-bottom: 0.6em;
+	}
+	h4{
+		margin-bottom: 0;
+	}
+}
+
+
+/* =======================
+	 FEATURED COLLECTIONS 
+   =======================	*/
+
+$collection-height: 280px;
+#featured{
+	h2{
+		text-transform: capitalize;
+	}
+}
+.collection{
+	position: relative;
+	background-color: $light-gray;
+	padding-bottom: calc( 50% - (#{$gutter} / 2));
+	.title{
+		@include absolute(30px, unset, unset, 30px);	
+	}
+	h3{
+		margin: 0;
+	}
+}
+#mens-jacket{
+	@include breakpoint(md){
+		height: $collection-height * 2;	
+	}
+}
+.view{
+	font-style: italic;
+}
+
+
+@mixin absolutePos($top: unset, $right: unset, $bottom: unset, $left: unset){
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+/* =======================
+	 POPULAR PRODUCT 
+   =======================	*/
+
+
+.product {
+	.meta{
+		display: flex;
+		justify-content: space-between;
+		margin-top: 20px;
+	}
+	h4{
+		margin: 0 0 7px 0;
+		@include fontsize(14px);
+		text-transform: capitalize;
+		font-weight: bold;
+	}
+	.price{
+		@include fontsize(14px);
+		strike{
+			@include fontsize(13px);
+			color: $mid-gray;
+		}
+	}
+	figure{
+		position: relative;
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	figcaption{
+		@include absolute(20px,20px,20px,20px);
+		background-color: $white;
+		.btn{
+			display: block;
+			text-align: center;
+		}
+		.btn + .btn{
+			margin-top: 10px;
+		}
+		.buttons{
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			padding: 34px;
+			width: 100%;
+		}
+	}
+}
+
+/* =======================
+		BLOG 
+   =======================	*/
+#blog{
+	article{
+		@include breakpoint(md){
+			&:first-child{
+				text-align: right;
+				padding-right: $gutter;
+			}
+			text-align: left;
+			padding-left: $gutter;
+			padding-right: 0;
+			
+		}
+		
+		h2{
+			font-weight: normal;
+			text-transform: none;
+			margin-bottom: 0;
+		}
+	}
+}

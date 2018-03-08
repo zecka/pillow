@@ -1,0 +1,18 @@
+.text-center{
+	text-align: center;
+}
+@include breakpoint('md'){
+	
+	.sep-center{
+		position: relative;
+		&::after{
+			content:"";
+			@include absolute(0, unset, 0, 50%);
+			width: 1px;
+			background-image: linear-gradient(to bottom, $mid-gray 1px, rgba(255, 255, 255, 0) 0%);
+			background-position: left;
+			background-size: 1px 5px;
+			background-repeat: repeat-y;
+		}
+	}
+}

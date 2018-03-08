@@ -1,0 +1,19 @@
+/* =======================
+	      Balises 
+   =======================	*/
+hr{
+	height: 3px;
+	border: 0;
+	border-top: 1px solid #d2d2d2;
+	border-bottom: 1px solid #d2d2d2;
+	margin: 50px 0;
+}
+
+hr.sep-title{
+	height: 0;
+	border-bottom: 0;
+	border-top-color: $dark-gray;
+	width: 40px;
+	display: inline-block;
+	margin: 15px 0;
+}

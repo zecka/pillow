@@ -1,5 +1,18 @@
-@import 'normalize';
-@import 'breakpoint';
-@import 'variables';
-@import 'grid';
-@import 'mixins';
+@import 'starters/normalize';
+@import 'starters/variables';
+@import 'starters/breakpoint';
+@import 'starters/grid';
+@import 'starters/mixins';
+@import 'starters/usefull';
+
+
+@import 'content/fonts';
+@import 'content/balises';
+@import 'content/btn';
+@import 'content/rating';
+
+
+@import 'layout/header';
+@import 'layout/main';
+
+

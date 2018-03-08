@@ -16,34 +16,51 @@ $gutter: 20px;
 }
 
 @mixin vertical_row($device: xs){
-	.#{$device}-vertical-row{
+	.row.#{$device}-vertical{
 		flex-direction: column;
 		height: 100%;
-		.col-md-two{
-			background-color: red;
+		margin: 0;
+		>[class*="col-"] > .row{
+			height: 100%;
+			margin: 0;
 		}
 	}
 }
 
-
-*{
-  box-sizing: border-box;
-}
-body{
-  background: #333;
-}
 .row{
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
 [class*="col-"]{
-  background: #fff;
-  background-clip: content-box;
+	
+}
+.row{
+	margin: $gutter 0;
 }
 
-.col-md-four{
-	background-color: #ccc;
+.container{
+	width: calc(100% - #{$gutter} * 2);
+	max-width: 1170px;
+	margin: auto;
 }
-@include cols(md);
+
+
+	
+@include cols(xs);
+@include vertical_row(xs);
+
+@include breakpoint(sm) {
+	@include cols(sm);
+	@include vertical_row(sm);
+}
+@include breakpoint(md) {
+	@include cols(md);
+	@include vertical_row(md);
+}
+@include breakpoint(lg) {
+	@include cols(lg);
+	@include vertical_row(lg);
+}
 
