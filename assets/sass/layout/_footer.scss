@@ -1,0 +1,19 @@
+footer{
+	@include fontsize(14px);
+	.social-links{
+		a{
+			display: inline-block;
+			color: $mid-gray;
+		}
+		a+a{
+			margin-left: 15px;
+		}
+	}
+	.copyright{
+		line-height: calculateRem(24px);
+		a{
+			font-weight: bold;
+			color: $dark-gray;
+		}
+	}
+}

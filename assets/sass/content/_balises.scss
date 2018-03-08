@@ -17,3 +17,9 @@ hr.sep-title{
 	display: inline-block;
 	margin: 15px 0;
 }
+
+
+input[type="text"],
+input[type="email"]{
+	padding: calculateRem(25px) calculateRem(15px);
+}

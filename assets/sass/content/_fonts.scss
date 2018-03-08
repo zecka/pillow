@@ -8,8 +8,11 @@
 }
 body{
 	font-family: 'Roboto Slab', serif;
-	color: $dark-gray;
+	color: $mid-gray;
 	font-size: $font-base;
+}
+h1, h2, h3, h4, h5{
+	color: $dark-gray;
 }
 h1{
 	text-transform: uppercase;

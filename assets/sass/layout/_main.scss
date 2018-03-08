@@ -84,6 +84,14 @@ $collection-height: 280px;
 	bottom: $bottom;
 	left: $left;
 }
+/* =======================
+	 	NEWSLETTER 
+   =======================	*/
+#newsletter{
+	
+}
+   
+   
 
 /* =======================
 	 POPULAR PRODUCT 
@@ -141,6 +149,7 @@ $collection-height: 280px;
    =======================	*/
 #blog{
 	article{
+		text-align: center;
 		@include breakpoint(md){
 			&:first-child{
 				text-align: right;

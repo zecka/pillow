@@ -1,26 +1,44 @@
 $gutter: 20px;
-
+$nb-cols: 12;
 @mixin cols($device: xs) {
-	.col-#{$device}-one{ flex-basis: 100% }
-	.col-#{$device}-two{ flex-basis: calc((100% / 2) - #{$gutter}  / 2) }
-	.col-#{$device}-three{ flex-basis: calc((100% / 3) - #{$gutter}  / 2) }
-	.col-#{$device}-four{ flex-basis: calc((100% / 4) - #{$gutter}  / 2) }
-	.col-#{$device}-five{ flex-basis: calc((100% / 5) - #{$gutter}  / 2) }
-	.col-#{$device}-six{ flex-basis: calc((100% / 6) - #{$gutter}  / 2) }
-	.col-#{$device}-seven{ flex-basis: calc((100% / 7) - #{$gutter}  / 2) }
-	.col-#{$device}-eight{ flex-basis: calc((100% / 8) - #{$gutter}  / 2) }
-	.col-#{$device}-nine{ flex-basis: calc((100% / 9) - #{$gutter}  / 2) }
-	.col-#{$device}-ten{ flex-basis: calc((100% / 10) - #{$gutter}  / 2) }
-	.col-#{$device}-eleven{ flex-basis: calc((100% / 11) - #{$gutter}  / 2) }
-	.col-#{$device}-twelve{ flex-basis: calc((100% / 12) - #{$gutter}  / 2) }
+	
+	@for $i from 1 through $nb-cols {
+		@if($i==1){
+			.#{$device}-#{$i} {
+				flex-basis: 100%;
+			}
+			
+		}@else{
+			$size: percentage( 1 / $i );
+			$nb-gutters: $i - 1;
+			.#{$device}-#{$i} {
+				flex-basis: calc(#{$size} - #{$gutter} * #{$nb-gutters} / #{$i});
+			}
+		}
+	}
+	
+	/*.col-#{$device}-one{ flex-basis: 100% }
+	.col-#{$device}-two{ flex-basis: calc((100% / 2) - #{$gutter} * 1 / 2) }
+	.col-#{$device}-three{ flex-basis: calc((100% / 3) - #{$gutter} * 2 / 3) }
+	.col-#{$device}-four{ flex-basis: calc((100% / 4) - #{$gutter} * 3 / 4) }
+	.col-#{$device}-five{ flex-basis: calc((100% / 5) - #{$gutter} * 4 / 5) }
+	.col-#{$device}-six{ flex-basis: calc((100% / 6) - #{$gutter} * 5 / 6) }
+	.col-#{$device}-seven{ flex-basis: calc((100% / 7) - #{$gutter} * 6 / 7) }
+	.col-#{$device}-eight{ flex-basis: calc((100% / 8) - #{$gutter} * 7 / 8) }
+	.col-#{$device}-nine{ flex-basis: calc((100% / 9) - #{$gutter}  * 8 / 9) }
+	.col-#{$device}-ten{ flex-basis: calc((100% / 10) - #{$gutter}  * 9 / 10) }
+	.col-#{$device}-eleven{ flex-basis: calc((100% / 11) - #{$gutter} * 10 / 11) }
+	.col-#{$device}-twelve{ flex-basis: calc((100% / 12) - #{$gutter} * 11 / 12) }*/
 }
+
+// calc((100% / 4) - 20px * 3  / 4) 
 
 @mixin vertical_row($device: xs){
 	.row.#{$device}-vertical{
 		flex-direction: column;
 		height: 100%;
 		margin: 0;
-		>[class*="col-"] > .row{
+		> .col > .row{
 			height: 100%;
 			margin: 0;
 		}
