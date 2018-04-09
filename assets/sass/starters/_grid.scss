@@ -1,20 +1,37 @@
 $gutter: 20px;
+$gutter-half: $gutter/2;
 $nb-cols: 12;
 @mixin cols($device: xs) {
 	
 	@for $i from 1 through $nb-cols {
 		@if($i==1){
-			.#{$device}-#{$i} {
+			// DEFINE COLUMN SIZE IN ROW CLASS NAME (ALL COLUMN SAME SIZE)
+			.#{$device}-#{$i}-columns > .col {
 				flex-basis: 100%;
 			}
+			
+			
 			
 		}@else{
 			$size: percentage( 1 / $i );
 			$nb-gutters: $i - 1;
-			.#{$device}-#{$i} {
+			.#{$device}-#{$i}-columns > .col {
 				flex-basis: calc(#{$size} - #{$gutter} * #{$nb-gutters} / #{$i});
 			}
+			
+			.#{$device}-#{$i}-columns.no-gutter > .col {
+				flex-basis: $size;
+			}
 		}
+		
+		// DEFINE column size on each column into a row (Different column size)
+		$size: percentage( $i / $nb-cols);
+		.row > .col-#{$device}-#{$i} {
+			flex-basis: #{$size};
+			padding: $gutter-half;
+		}
+		
+		
 	}
 	
 	/*.col-#{$device}-one{ flex-basis: 100% }
@@ -34,36 +51,47 @@ $nb-cols: 12;
 // calc((100% / 4) - 20px * 3  / 4) 
 
 @mixin vertical_row($device: xs){
-	.row.#{$device}-vertical{
+	.#{$device}-vertical{
 		flex-direction: column;
 		height: 100%;
 		margin: 0;
-		> .col > .row{
+		> .col > [class*="-columns"]{
 			height: 100%;
 			margin: 0;
 		}
 	}
 }
-
-.row{
+[class*="col-"]{
+	min-height: 1px;
+}
+.row,
+[class*="-columns"]{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	margin: $gutter 0;
+
 }
 
-[class*="col-"]{
-	
-}
+
 .row{
-	margin: $gutter 0;
+	margin: $gutter -#{$gutter-half};
+
 }
 
 .container{
 	width: calc(100% - #{$gutter} * 2);
 	max-width: 1170px;
 	margin: auto;
+	overflow: hidden;
 }
-
+.container-fluid{
+	width: 100%;
+	overflow: hidden;
+}
+.test > *{
+	background-color: red;
+}
 
 	
 @include cols(xs);

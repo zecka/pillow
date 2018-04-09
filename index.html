@@ -4,8 +4,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="assets/fa/css/fontawesome-all.min.css" rel="stylesheet">
-
-
 	<link rel="stylesheet" href="assets/css/style.css">
 	<title>PILLOW love Leo</title>
 </head>
@@ -50,30 +48,30 @@
 			
 			<section id="featured">
 				<h2>Featured Collections</h2>
-				<div class="row">
-					<a id="mens-jacket" class="collection col xs-1 md-2" href="#">
+				<div class="xs-1-columns sm-2-columns">
+					<a id="mens-jacket" class="collection col" href="#">
 						<div class="title">
 							<h3>Men's Jacket</h3>
 							<span class="view" href="#">View Collection</span>
 						</div>
 					</a>
-					<div class="col xs-1 md-2">
-						<div class="row md-vertical">
-							<a id="womens-shoes" class="collection col xs-1 md-2" href="#">
+					<div class="col">
+						<div class="sm-vertical xs-1-columns sm-2-columns">
+							<a id="womens-shoes" class="collection col" href="#">
 								<div class="title">
-									<h3>Women's Jacket</h3>
+									<h3>Women's Shoes</h3>
 									<span class="view" href="#">View Collection</span>
 								</div>
 							</a>
-							<div class="col xs-1 md-2">
-								<div class="row">
-									<a id="backpack" class="collection xs-2" href="#">
+							<div class="col">
+								<div class="xs-2-columns">
+									<a id="backpack" class="collection col" href="#">
 										<div class="title">
 											<h3>Backpack</h3>
 											<span class="view" href="#">View Collection</span>
 										</div>
 									</a>
-									<a id="glasses" class="collection col xs-2" href="#">
+									<a id="glasses" class="collection col" href="#">
 										<div class="title">
 											<h3>Glasses</h3>
 											<span class="view" href="#">View Collection</span>
@@ -91,6 +89,7 @@
 				<h2>Subscribe our newsletter</h2>
 				<p>Duis eget malesuada metus. Donec fringilla suscipit efficitur. Suspendisse sit amet fringilla leo</p>
 				<input type="email" placeholder="Email Address">
+				<a href="#" class="submit"><i class="fas fa-plus"></i></a>
 			</section>
 			
 			<hr>
@@ -100,17 +99,26 @@
 					<h2>Popular Products</h2>
 					<p>Duis eget malesuada metus. Donec fringilla suscipit efficitur.</p>
 				</div>
-				<div class="row">
+				<div class="xs-2-columns md-4-columns">
 					
 					
-					<div class="col xs-2 md-4 product">
+					<div class="col product">
 						<figure>
 							<img src="assets/img/tshirt01.jpg" />
 							<figcaption>
 								<div class="buttons">
-									<a href="#" class="btn">Add to cart</a>
-									<a href="#" class="btn">Quick View</a>
-									<a href="#" class="btn">Show details</a>
+									<a href="#" class="btn">
+										<i class="fas fa-shopping-cart"></i>
+										<span>Add to cart</span>
+									</a>
+									<a href="#" class="btn">
+										<i class="fas fa-eye"></i>
+										<span>Quick View</span>
+									</a>
+									<a href="#" class="btn">
+										<i class="fas fa-arrow-alt-circle-right"></i>
+										<span>Show details</span>
+									</a>
 								</div>
 							</figcaption>
 						</figure>
@@ -147,14 +155,23 @@
 					</div>
 					
 					
-					<div class="col xs-2 md-4 product">
+					<div class="col product">
 						<figure>
 							<img src="assets/img/tshirt01.jpg" />
 							<figcaption>
 								<div class="buttons">
-									<a href="#" class="btn">Add to cart</a>
-									<a href="#" class="btn">Quick View</a>
-									<a href="#" class="btn">Show details</a>
+									<a href="#" class="btn">
+										<i class="fas fa-shopping-cart"></i>
+										<span>Add to cart</span>
+									</a>
+									<a href="#" class="btn">
+										<i class="fas fa-eye"></i>
+										<span>Quick View</span>
+									</a>
+									<a href="#" class="btn">
+										<i class="fas fa-arrow-alt-circle-right"></i>
+										<span>Show details</span>
+									</a>
 								</div>
 							</figcaption>
 						</figure>
@@ -165,40 +182,49 @@
 							</div>
 							
 							<fieldset class="rating">
-							    <input type="radio" id="star5" name="rating" value="5" />
-							    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
-							    <input type="radio" id="star4half" name="rating" value="4 and a half" />
-							    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-							    <input type="radio" id="star4" name="rating" value="4" />
-							    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-							    <input type="radio" id="star3half" name="rating" value="3 and a half" />
-							    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-							    <input type="radio" id="star3" name="rating" value="3" />
-							    <label class = "full" for="star3" title="Meh - 3 stars"></label>
-							    <input type="radio" id="star2half" name="rating" value="2 and a half" />
-							    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-							    <input type="radio" id="star2" name="rating" value="2" />
-							    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-							    <input type="radio" id="star1half" name="rating" value="1 and a half" />
-							    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-							    <input type="radio" id="star1" name="rating" value="1" />
-							    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-							    <input type="radio" id="starhalf" name="rating" value="half" />
-							    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+							    <input type="radio" id="c-star5" name="rating" value="5" />
+							    <label class = "full" for="c-star5" title="Awesome - 5 c-stars"></label>
+							    <input type="radio" id="c-star4half" name="rating" value="4 and a half" />
+							    <label class="half" for="c-star4half" title="Pretty good - 4.5 c-stars"></label>
+							    <input type="radio" id="c-star4" name="rating" value="4" />
+							    <label class = "full" for="c-star4" title="Pretty good - 4 c-stars"></label>
+							    <input type="radio" id="c-star3half" name="rating" value="3 and a half" />
+							    <label class="half" for="c-star3half" title="Meh - 3.5 c-stars"></label>
+							    <input type="radio" id="c-star3" name="rating" value="3" />
+							    <label class = "full" for="c-star3" title="Meh - 3 c-stars"></label>
+							    <input type="radio" id="c-star2half" name="rating" value="2 and a half" />
+							    <label class="half" for="c-star2half" title="Kinda bad - 2.5 c-stars"></label>
+							    <input type="radio" id="c-star2" name="rating" value="2" />
+							    <label class = "full" for="c-star2" title="Kinda bad - 2 c-stars"></label>
+							    <input type="radio" id="c-star1half" name="rating" value="1 and a half" />
+							    <label class="half" for="c-star1half" title="Meh - 1.5 c-stars"></label>
+							    <input type="radio" id="c-star1" name="rating" value="1" />
+							    <label class = "full" for="c-star1" title="Sucks big time - 1 c-star"></label>
+							    <input type="radio" id="c-starhalf" name="rating" value="half" />
+							    <label class="half" for="c-starhalf" title="Sucks big time - 0.5 c-stars"></label>
 							</fieldset>
 							
 						</div>
 					</div>
 					
 					
-					<div class="col xs-2 md-4 product">
+					<div class="col product">
 						<figure>
 							<img src="assets/img/tshirt01.jpg" />
 							<figcaption>
 								<div class="buttons">
-									<a href="#" class="btn">Add to cart</a>
-									<a href="#" class="btn">Quick View</a>
-									<a href="#" class="btn">Show details</a>
+									<a href="#" class="btn">
+										<i class="fas fa-shopping-cart"></i>
+										<span>Add to cart</span>
+									</a>
+									<a href="#" class="btn">
+										<i class="fas fa-eye"></i>
+										<span>Quick View</span>
+									</a>
+									<a href="#" class="btn">
+										<i class="fas fa-arrow-alt-circle-right"></i>
+										<span>Show details</span>
+									</a>
 								</div>
 							</figcaption>
 						</figure>
@@ -209,39 +235,48 @@
 							</div>
 							
 							<fieldset class="rating">
-							    <input type="radio" id="star5" name="rating" value="5" />
-							    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
-							    <input type="radio" id="star4half" name="rating" value="4 and a half" />
-							    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-							    <input type="radio" id="star4" name="rating" value="4" />
-							    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-							    <input type="radio" id="star3half" name="rating" value="3 and a half" />
-							    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-							    <input type="radio" id="star3" name="rating" value="3" />
-							    <label class = "full" for="star3" title="Meh - 3 stars"></label>
-							    <input type="radio" id="star2half" name="rating" value="2 and a half" />
-							    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-							    <input type="radio" id="star2" name="rating" value="2" />
-							    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-							    <input type="radio" id="star1half" name="rating" value="1 and a half" />
-							    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-							    <input type="radio" id="star1" name="rating" value="1" />
-							    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-							    <input type="radio" id="starhalf" name="rating" value="half" />
-							    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+							    <input type="radio" id="b-star5" name="rating" value="5" />
+							    <label class = "full" for="b-star5" title="Awesome - 5 b-stars"></label>
+							    <input type="radio" id="b-star4half" name="rating" value="4 and a half" />
+							    <label class="half" for="b-star4half" title="Pretty good - 4.5 b-stars"></label>
+							    <input type="radio" id="b-star4" name="rating" value="4" />
+							    <label class = "full" for="b-star4" title="Pretty good - 4 b-stars"></label>
+							    <input type="radio" id="b-star3half" name="rating" value="3 and a half" />
+							    <label class="half" for="b-star3half" title="Meh - 3.5 b-stars"></label>
+							    <input type="radio" id="b-star3" name="rating" value="3" />
+							    <label class = "full" for="b-star3" title="Meh - 3 b-stars"></label>
+							    <input type="radio" id="b-star2half" name="rating" value="2 and a half" />
+							    <label class="half" for="b-star2half" title="Kinda bad - 2.5 b-stars"></label>
+							    <input type="radio" id="b-star2" name="rating" value="2" />
+							    <label class = "full" for="b-star2" title="Kinda bad - 2 b-stars"></label>
+							    <input type="radio" id="b-star1half" name="rating" value="1 and a half" />
+							    <label class="half" for="b-star1half" title="Meh - 1.5 b-stars"></label>
+							    <input type="radio" id="b-star1" name="rating" value="1" />
+							    <label class = "full" for="b-star1" title="Sucks big time - 1 b-star"></label>
+							    <input type="radio" id="b-starhalf" name="rating" value="half" />
+							    <label class="half" for="b-starhalf" title="Sucks big time - 0.5 b-stars"></label>
 							</fieldset>
 							
 						</div>
 					</div>
 					
-					<div class="col xs-2 md-4 product">
+					<div class="col product">
 						<figure>
 							<img src="assets/img/tshirt01.jpg" />
 							<figcaption>
 								<div class="buttons">
-									<a href="#" class="btn">Add to cart</a>
-									<a href="#" class="btn">Quick View</a>
-									<a href="#" class="btn">Show details</a>
+									<a href="#" class="btn">
+										<i class="fas fa-shopping-cart"></i>
+										<span>Add to cart</span>
+									</a>
+									<a href="#" class="btn">
+										<i class="fas fa-eye"></i>
+										<span>Quick View</span>
+									</a>
+									<a href="#" class="btn">
+										<i class="fas fa-arrow-alt-circle-right"></i>
+										<span>Show details</span>
+									</a>
 								</div>
 							</figcaption>
 						</figure>
@@ -252,26 +287,26 @@
 							</div>
 							
 							<fieldset class="rating">
-							    <input type="radio" id="star5" name="rating" value="5" />
-							    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
-							    <input type="radio" id="star4half" name="rating" value="4 and a half" />
-							    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-							    <input type="radio" id="star4" name="rating" value="4" />
-							    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-							    <input type="radio" id="star3half" name="rating" value="3 and a half" />
-							    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-							    <input type="radio" id="star3" name="rating" value="3" />
-							    <label class = "full" for="star3" title="Meh - 3 stars"></label>
-							    <input type="radio" id="star2half" name="rating" value="2 and a half" />
-							    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-							    <input type="radio" id="star2" name="rating" value="2" />
-							    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-							    <input type="radio" id="star1half" name="rating" value="1 and a half" />
-							    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-							    <input type="radio" id="star1" name="rating" value="1" />
-							    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-							    <input type="radio" id="starhalf" name="rating" value="half" />
-							    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+							    <input type="radio" id="a-star5" name="rating" value="5" />
+							    <label class = "full" for="a-star5" title="Awesome - 5 a-stars"></label>
+							    <input type="radio" id="a-star4half" name="rating" value="4 and a half" />
+							    <label class="half" for="a-star4half" title="Pretty good - 4.5 a-stars"></label>
+							    <input type="radio" id="a-star4" name="rating" value="4" />
+							    <label class = "full" for="a-star4" title="Pretty good - 4 a-stars"></label>
+							    <input type="radio" id="a-star3half" name="rating" value="3 and a half" />
+							    <label class="half" for="a-star3half" title="Meh - 3.5 a-stars"></label>
+							    <input type="radio" id="a-star3" name="rating" value="3" />
+							    <label class = "full" for="a-star3" title="Meh - 3 a-stars"></label>
+							    <input type="radio" id="a-star2half" name="rating" value="2 and a half" />
+							    <label class="half" for="a-star2half" title="Kinda bad - 2.5 a-stars"></label>
+							    <input type="radio" id="a-star2" name="rating" value="2" />
+							    <label class = "full" for="a-star2" title="Kinda bad - 2 a-stars"></label>
+							    <input type="radio" id="a-star1half" name="rating" value="1 and a half" />
+							    <label class="half" for="a-star1half" title="Meh - 1.5 a-stars"></label>
+							    <input type="radio" id="a-star1" name="rating" value="1" />
+							    <label class = "full" for="a-star1" title="Sucks big time - 1 a-star"></label>
+							    <input type="radio" id="a-starhalf" name="rating" value="half" />
+							    <label class="half" for="a-starhalf" title="Sucks big time - 0.5 a-stars"></label>
 							</fieldset>
 							
 						</div>
@@ -286,18 +321,23 @@
 			
 			<section id="blog">
 				<h2 class="text-center">More entries from blogs</h2>
-				<div class="row sep-center">
-					<article class="col xs-1 md-2">
+				<div class="sep-center xs-1-columns md-2-columns">
+					<article class="col">
 						<h2>Need a WordPress Theme Review Service? Check out ThemeReview.co!</h2>
 						<hr class="sep-title" />
 						<p>Post by <strong>k3nnyart</strong> <span class="sep">/</span> 12.5.2015 <span class="sep">/</span> WordPress Product Reviews</p>
 					</article>
-					<article class="col xs-1 md-2">
+					<article class="col">
 						<h2>A Quick Look At Ninja – Upcoming Fashion WooCommerce Theme</h2>
 						<hr class="sep-title" />
 						<p>Post by <strong>k3nnyart</strong> <span class="sep">/</span> 12.5.2015 <span class="sep">/</span> WordPress Product Reviews</p>
 					</article>
 				</div>
+				<nav>
+					<i class="dot"></i>
+					<i class="dot current"></i>
+					<i class="dot"></i>
+				</nav>
 			</section>
 			
 			<hr />
@@ -323,5 +363,30 @@
 		
 	</div>
 </div>
+
+<!--
+<div class="container-fluid">
+	<div class="row test">
+		<div class="col-xs-7">COUCOU</div>
+		<div class="col-xs-3">hello</div>
+		<div class="col-xs-1">YE</div>
+		<div class="col-xs-1">YE</div>
+	</div>
+</div>
+<div class="xs-4-columns test">
+	<div class="col">HELLO</div>
+	<div class="col">HELLO</div>
+	<div class="col">HELLO</div>
+	<div class="col">HELLO</div>
+</div>
+
+<div class="xs-4-columns test no-gutter">
+	<div class="col">HELLO</div>
+	<div class="col">HELLO</div>
+	<div class="col">HELLO</div>
+	<div class="col">HELLO</div>
+</div>
+-->
+
 </body>
 </html>

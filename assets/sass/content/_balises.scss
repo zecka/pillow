@@ -18,8 +18,22 @@ hr.sep-title{
 	margin: 15px 0;
 }
 
-
-input[type="text"],
-input[type="email"]{
-	padding: calculateRem(25px) calculateRem(15px);
+input{
+	&::placeholder{
+		color: $mid-gray;
+		font-family: 'Roboto Slab', serif;
+	
+	}
+	&[type="text"],
+	&[type="email"]{
+		padding: calculateRem(25px) calculateRem(15px);
+	}
+	&[type="email"]{
+		padding-right: calculateRem(40px);
+		+ a.submit{
+			content: "\f067";
+			@include fontAwesome();
+			margin-left: calculateRem(-40px);
+		}
+	}
 }

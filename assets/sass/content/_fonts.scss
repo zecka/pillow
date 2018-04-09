@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:700|Roboto+Slab:400,700');
-
+@mixin fontAwesome(){
+	font-family: Font Awesome\ 5 Free;
+}
 .logo{
 	h1, 
 	.logo-icon{
@@ -10,6 +12,8 @@ body{
 	font-family: 'Roboto Slab', serif;
 	color: $mid-gray;
 	font-size: $font-base;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 h1, h2, h3, h4, h5{
 	color: $dark-gray;

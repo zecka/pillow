@@ -1,36 +1,36 @@
-.rating {
+.product .rating {
 	padding: 0;
 	margin: 0;
 	border: none;
 	@include fontsize(10px);
 
 }
-.rating > input { display: none; } 
-.rating > label:before { 
+.product .rating > input { display: none; } 
+.product .rating > label:before { 
   margin-left: 5px;
-  font-family: Font Awesome\ 5 Free;
+  @include fontAwesome();
   font-weight: 900;
   display: inline-block;
   content: "\f005";
 }
 
-.rating > .half:before { 
+.product .rating > .half:before { 
   content: "\f089";
   position: absolute;
 }
 
-.rating > label { 
+.product .rating > label { 
   color: #ddd; 
   float: right; 
 }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 
-.rating > input:checked ~ label, /* show gold star when clicked */
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #fbaf5d;  } /* hover previous stars in list */
+.product .rating > input:checked ~ label, /* show gold star when clicked */
+.product .rating:not(:checked) > label:hover, /* hover current star */
+.product .rating:not(:checked) > label:hover ~ label { color: #fbaf5d;  } /* hover previous stars in list */
 
-.rating > input:checked + label:hover, /* hover current star when changing rating */
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #f0b372;  } 
+.product .rating > input:checked + label:hover, /* hover current star when changing rating */
+.product .rating > input:checked ~ label:hover,
+.product .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.product .rating > input:checked ~ label:hover ~ label { color: #f0b372;  } 

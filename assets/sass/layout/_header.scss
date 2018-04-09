@@ -3,12 +3,15 @@
    =======================	*/
 .logo{
 	display: block;
+	margin-top: 30px;
+	padding-top: 3px;
 	padding-left: 57px;
 	position: relative;
 	.logo-icon{
 		display: block;
 		position: absolute;
 		left: 0;
+		top: 0;
 		height: 47px;
 		width: 47px;
 		background-color: $dark-gray;
@@ -37,5 +40,43 @@
 		text-transform: none;
 		font-weight: normal;
 		margin: 0;
+		color: $mid-gray;
 	}
+}
+
+header{
+	blockquote{
+		margin: 0;
+		@include fontsize(24px);
+		line-height: 1.5em;
+		margin-top: 45px;
+		color: $dark-gray;
+		max-width: 780px;
+	}
+}
+header nav{
+	overflow: hidden;
+	.hamburger{
+		width: 40px;
+		height: 40px;
+		display: inline-block;
+		background-color: $dark-gray;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		float: right;
+		
+		span{
+			width: 17px;
+			height: 3px;
+			background-color: $white;
+			+ span{
+				margin-top: 3px;
+			}
+		}
+	}
+}
+header + hr{
+	margin-top: 14px;
 }

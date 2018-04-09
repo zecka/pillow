@@ -50,7 +50,6 @@
 	 FEATURED COLLECTIONS 
    =======================	*/
 
-$collection-height: 280px;
 #featured{
 	h2{
 		text-transform: capitalize;
@@ -68,10 +67,32 @@ $collection-height: 280px;
 	}
 }
 #mens-jacket{
+	background-image: url(../img/mens-jacket.png);
+	background-position: right top;
 	@include breakpoint(md){
-		height: $collection-height * 2;	
+		background-position: right bottom;	
 	}
 }
+#womens-shoes{
+	background-image: url(../img/womens-shoes.png);
+	background-position: right -140px;
+}
+
+#backpack{
+	background-image: url(../img/backpack.png);
+	background-position: right 60px;
+}
+#glasses{
+	background-image: url(../img/glasses.png);
+	background-position: right bottom;
+	@include breakpoint(sm){
+		background-size: 85%;
+	}
+	@include breakpoint(lg){
+		background-size: initial;
+	}
+}
+
 .view{
 	font-style: italic;
 }
@@ -88,7 +109,12 @@ $collection-height: 280px;
 	 	NEWSLETTER 
    =======================	*/
 #newsletter{
-	
+	padding: 70px 0 40px;
+	input{
+		max-width: 375px;
+		width: 80%;
+		margin-top: 30px;
+	}
 }
    
    
@@ -99,6 +125,7 @@ $collection-height: 280px;
 
 
 .product {
+	margin-bottom: $gutter;
 	.meta{
 		display: flex;
 		justify-content: space-between;
@@ -119,17 +146,44 @@ $collection-height: 280px;
 	}
 	figure{
 		position: relative;
+		overflow: hidden;
 		img{
 			width: 100%;
 			height: auto;
+			transition: all .14s ease-in-out;
+		}
+		
+		&:hover{
+			figcaption{
+				opacity: 1;
+				transform: translateY(0px);
+			}
+			img{
+				transform: scale(1.1);
+			}
 		}
 	}
 	figcaption{
 		@include absolute(20px,20px,20px,20px);
 		background-color: $white;
+		opacity: 0;
+		transition: all .3s ease-in-out;
+		transform: translateY(-30px);
+
 		.btn{
 			display: block;
 			text-align: center;
+			span{
+				display: none;
+			}
+			@include breakpoint(sm){
+				i{
+					display: none;
+				}
+				span{
+					display: inline;
+				}
+			}
 		}
 		.btn + .btn{
 			margin-top: 10px;
@@ -165,6 +219,28 @@ $collection-height: 280px;
 			font-weight: normal;
 			text-transform: none;
 			margin-bottom: 0;
+		}
+	}
+	nav{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	nav .dot{
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		background-color: #d2d2d2;
+		transform-origin: center center;
+		transform: rotateZ(45deg);
+		&.current{
+			width: 10px;
+			height: 10px;
+			background-color: transparent;
+			border: 2px solid $dark-gray;
+		}
+		+ .dot{
+			margin-left: 8px;
 		}
 	}
 }
