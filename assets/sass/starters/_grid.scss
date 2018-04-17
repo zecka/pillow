@@ -83,7 +83,6 @@ $nb-cols: 12;
 	width: calc(100% - #{$gutter} * 2);
 	max-width: 1170px;
 	margin: auto;
-	overflow: hidden;
 }
 .container-fluid{
 	width: 100%;
@@ -91,6 +90,11 @@ $nb-cols: 12;
 }
 .test > *{
 	background-color: red;
+}
+@include breakpoint(md-down) {
+	.hide-mobile{
+		display: none;
+	}
 }
 
 	
@@ -108,5 +112,10 @@ $nb-cols: 12;
 @include breakpoint(lg) {
 	@include cols(lg);
 	@include vertical_row(lg);
+}
+@include breakpoint(md) {
+	.hide-desktop{
+		display: none;
+	}
 }
 

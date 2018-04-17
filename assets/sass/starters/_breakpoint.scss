@@ -17,9 +17,9 @@ $screen-lg: 1200px; // Desktop >= 1200px
 
 @mixin breakpoint($point) {
 	
-  	/* =======================
-			Upper
-	========================= */
+  	// =======================
+	//		Upper
+	// =========================
 	
 	// mobile fist so XS is applied to all screen
   	@if $point == xs{
@@ -34,12 +34,14 @@ $screen-lg: 1200px; // Desktop >= 1200px
   	@else if $point == md {
    		@media (min-width: $screen-md){ @content; }
   	}
+  	
   
   	
-  	/* =======================
-			Strict
-	========================= */
+  	// =======================
+	//		Strict
+	// =======================
 	
+  	
 	@else if $point == xs-only{
    		@media (max-width: $screen-sm - 1){ @content; }
   	}
@@ -49,10 +51,29 @@ $screen-lg: 1200px; // Desktop >= 1200px
   	@else if $point == md-only {
    		@media (min-width: $screen-md) and (max-width: $screen-lg - 1){ @content; }
   	}
+  	
   	// from lg screen and upper (but nothing its upper than lg)
-  	@else if $point == lg or lg-only {
+  	@else if $point == lg or $point == lg-only {
    		@media (min-width: $screen-lg){ @content; }
   	}
+  	
+  	
+  	
+  	
+  	// =======================
+	//		DownOF
+	// ========================
+	// down of md size
+  	@else if $point == md-down {
+   		@media (max-width: $screen-md - 1){ @content; }
+  	}
+  	
+  	// from sm screen size and upper
+  	@else if $point == sm-down {
+   		@media (max-width: $screen-sm - 1){ @content; }
+  	}
+  	
+  	
 
 }
 

@@ -20,3 +20,46 @@
 	top: 50%;
 	transform: translate(-50%,-50%);
 }
+
+@mixin arrow($color: #000, $thickness: 11px, $width: 220px, $height: 150px ){
+	// HTML ELEMENT NEED TO CONTENT A SPAN <div class="classname"><span></span></div>
+	$angle: 45deg;
+	$xtranslate: $thickness/1.375;
+	display: inline-block;
+	width: $width;
+	height: $height;
+	//background:red;
+	position: relative;
+	span{
+	
+		height: $thickness;
+		width: calc(100% - #{$xtranslate}) ;
+		background-color: $color;
+		display: block;
+		left: $xtranslate;
+	}
+	&::before,
+	&::after,
+	span{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&::before,
+	&::after{
+		content:"";
+		display: block;
+		background-color: $color;
+		width:$height / 1.5;
+		height: $thickness;
+	}
+	&::before{
+		transform: translateY(calc(-50% + #{$thickness / 2}))   rotateZ(-$angle);
+		transform-origin: left top
+	}
+	&::after{
+		transform: translateY(calc(-50% - #{$thickness / 2})) rotateZ($angle);
+		transform-origin: left bottom;
+	}
+  
+}
